@@ -124,3 +124,24 @@ export default App;
 * objectOf([React.PropTypes.number]): 객체의 모든 키 값이 인자로 주언진 PropType인 객체
 * shape({name: PropTypes.string, num: PropTypes.number}): 주어진 스키마를 가진 객체.
 * any: 아무 종류
+
+### setState()
+* setState에 함수 전달
+```javascript
+/**
+ * prevState : 기존 상태
+ * props : 현재 지니고 있는 props 상태
+ */
+this.setState((prevState, props) => {
+  return {
+    // 업데이트하고 싶은 내용
+  }
+})
+```
+
+* setState가 끝난 후 특정 작업 실행
+```javascript
+this.setState({number: number + 1}, () => {
+  console.log("callback :: setState가 호출 되었습니다.");
+})
+```
