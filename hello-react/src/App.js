@@ -1,17 +1,9 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import MyComponent from './MyComponent';
 
 function App() {
-  const name = "Name";
-  return (
-    <>
-      {name === "Name" ? (
-        <h1>Name 입니다.</h1>
-      ) : (
-        <h1>Name 아닙니다.</h1>
-      )}
-    </>
-  );
+  return <MyComponent name={"React"} favoriteNumber={3}>children</MyComponent>
 }
 
 export default App;

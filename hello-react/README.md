@@ -68,3 +68,57 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### 함수형 컴포넌트
+```javascript
+import React from "react";
+import './App.css';
+
+function App() {
+  const name = 'Name';
+  return <div className='react'>{name}</div>;
+}
+
+export default App;
+```
+장점)    
+* 선언하기 편리함.
+* 클래스형보다 메모리 자원을 덜 사용함.
+* 빌드 이후의 결과물 파일의 크기도 더 작다.    
+
+단점)   
+* state, 라이프사이클 API의 사용이 불가능하다. >>> **리액트 16.8 업데이트 이후 Hooks로 해결 가능.**
+
+### Class형 컴포넌트
+```javascript
+import React, {Component} from 'react';
+class App extends Component {
+  render() {
+    const name = "react";
+    return <div className='react'>{name}</div>;
+  }
+}
+export default App;
+```
+* state, 라이프사이클 API 사용이 가능
+* 임의 메서드를 정의할 수 있다.
+
+**함수형과 클래스형의 성능과 파일크기 면에서 사실상 크게 차이가 없어서 중요하게 생각안해도 됨.**
+**리액트 공식 문서에서는 새로운 컴포넌트를 작성할 때 함수형 컴포넌트와 Hooks를 사용하도록 권창을 하고 있다.**
+
+### PropTypes 종류
+* array : 배열
+* arrayOf(type) : 특정 타입으로 이루어진 배열. ex) arrayOf(PropTypes.number) -> 숫자로 이루어진 배열
+* bool: boolean
+* func: 함수
+* number: 숫자
+* object: 객체
+* string: 문자열
+* symbol: ES6의 Symbol
+* node: 렌더링할 수 있는 모든 것.(숫자, 문자열, 혹은 JSX코드, children도 node PropType.)
+* instanceOf(클래스): 특정 클래스의 인스턴스
+* oneOf(['dog', 'cat]): 주어진 배열 요소 중 값 하나
+* oneOfType([React.PropType.string, PropTypes.number]): 주어진 배열 안의 종류중 하나
+* objectOf([React.PropTypes.number]): 객체의 모든 키 값이 인자로 주언진 PropType인 객체
+* shape({name: PropTypes.string, num: PropTypes.number}): 주어진 스키마를 가진 객체.
+* any: 아무 종류
