@@ -145,3 +145,5 @@ this.setState({number: number + 1}, () => {
   console.log("callback :: setState가 호출 되었습니다.");
 })
 ```
+
+* [리액트 이벤트 메뉴얼](https://reactjs.org/docs/events.html)
