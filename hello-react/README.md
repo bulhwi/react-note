@@ -147,3 +147,16 @@ this.setState({number: number + 1}, () => {
 ```
 
 * [리액트 이벤트 메뉴얼](https://reactjs.org/docs/events.html)
+
+### map(callback, [thisArg])      
+
+* callback: 새로운 배열의 요소를 생성하는 함수로 파라미터는 다음 세가지   
+  - currentValue: 현재 처리하고 있는 원본 배열
+  - index: 현재 처리하고 있는 요소의 index 값
+  - array: 현재 처리하고 있는 원본 배열
+* thisArg(선택 항목): callback 함수 내부에서 사용할 this 레퍼런스   
+```javascript
+const number = [1,2,3,4,5];
+const processed = numbers.map((num) => num * num);
+console.log(processed); // [1, 4, 9, 16, 25]
+```
