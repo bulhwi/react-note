@@ -160,3 +160,28 @@ const number = [1,2,3,4,5];
 const processed = numbers.map((num) => num * num);
 console.log(processed); // [1, 4, 9, 16, 25]
 ```
+
+### 라이프 사이클
+* 마운트   
+ DOM이 생성되고 웹 브라우저상에 나타나는 것을 마운트라고 한다.
+ * 호출되는 메서드     
+   - constructor : 컴포넌트를 새로 만들 때마다 호출되는 클래스 생성자 메서드.
+   - getDerivedStateFromProps : props에 있는 값을 state에 넣을 때 사용하는 메서드.
+   - render : 우리가 준비한 UI를 렌더링하는 메서드.   
+  
+* 업데이트
+  컴포넌트가 업데이트 되는 경우.  
+  * props가 바뀔때.
+  * staterk 바뀔때.
+  * 부모 컴포넌트가 리엔더링될 때   
+  * this.forceUpdate로 강제로 렌더링을 트리거 할때
+  - 업데이트시 호출되는 메서드.  
+    - getDerivedStateFromProps
+    - shouldComponentUpdate
+    - render (shouldComponentUpdate에서 true 반환시.)
+    - getSnapshotBeforeUpdate
+    - componentDidUpdate   
+  
+* 언마운트
+  컴포넌트를 DOM에서 제거하는 것을 언마운트라고 함.
+  * componentWillUnmount : 컴포넌트가 웹브라우저에서 사라지기 전에 호출하는 메서드.
