@@ -173,7 +173,7 @@ console.log(processed); // [1, 4, 9, 16, 25]
   컴포넌트가 업데이트 되는 경우.  
   * props가 바뀔때.
   * state가 바뀔때.
-  * 부모 컴포넌트가 리엔더링될 때   
+  * 부모 컴포넌트가 리렌더링될 때   
   * this.forceUpdate로 강제로 렌더링을 트리거 할때
   - 업데이트시 호출되는 메서드.  
     - getDerivedStateFromProps
