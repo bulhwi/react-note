@@ -172,8 +172,8 @@ console.log(processed); // [1, 4, 9, 16, 25]
 * 업데이트
   컴포넌트가 업데이트 되는 경우.  
   * props가 바뀔때.
-  * staterk 바뀔때.
-  * 부모 컴포넌트가 리엔더링될 때   
+  * state가 바뀔때.
+  * 부모 컴포넌트가 리렌더링될 때   
   * this.forceUpdate로 강제로 렌더링을 트리거 할때
   - 업데이트시 호출되는 메서드.  
     - getDerivedStateFromProps
@@ -182,6 +182,6 @@ console.log(processed); // [1, 4, 9, 16, 25]
     - getSnapshotBeforeUpdate
     - componentDidUpdate   
   
-* 언마운트
+* 언마운트           
   컴포넌트를 DOM에서 제거하는 것을 언마운트라고 함.
   * componentWillUnmount : 컴포넌트가 웹브라우저에서 사라지기 전에 호출하는 메서드.
