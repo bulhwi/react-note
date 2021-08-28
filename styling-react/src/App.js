@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import SassComponent from './SassComponent.js';
+import CSSModule from './CSSModule';
 
 // import logo from './logo.svg';
 // import './App.css';
@@ -28,6 +29,7 @@ class App extends Component {
     return (
       <div>
         <SassComponent />
+        <CSSModule />
       </div>
     )
   }

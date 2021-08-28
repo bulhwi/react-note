@@ -1,0 +1,20 @@
+/* 자동으로 고유해지기 때문에 흔히 사용되는 클래스명이 사용 가능하다 */
+
+.wrapper {
+    background: black;
+    padding: 1rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.inverted {
+    color: black;
+    background: white;
+    border: 1px solid black;
+}
+
+/* 글로벌 CSS를 작성하고 싶다면 */
+:global .somthing {
+    font-weight: 800;
+    color: aqua;
+}
