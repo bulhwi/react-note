@@ -25,3 +25,10 @@ create-react-app 구번전 에서는 CSS Module을 사용하기 위해 css-loade
   const myClass = 'hello';
   classNames('one', myClass, {myCondition: true}); // one hello myCondition
   ```
+  
+### styled-components
+컴포넌트 스타일링의 또 다른 패러다임은 자바스크립트 파일안에 스타일을 선언하는 방식이다.
+이 방식을 'CSS-in-js'라고 부름.     
+[CSS-in-js 관련 라이브러리 종류들](https://github.com/MicheleBertoli/css-in-js)
+그중에서 선호도가 가장 높다고하는 styled-components를 책에서는 사용함.
+styled-components vs emotion ㅎㅎㅎㅎ 기존에 styled-components를 대체할만한 라이브러리라고 함.
