@@ -4,8 +4,7 @@ import About from "./About";
 import Home from "./Home";
 // import Profile from "./Profile";
 import Profiles from "./Profiles";
-import HistorySample from "./HistorySample"
-
+import HistorySample from "./HistorySample";
 
 function App() {
   return (
