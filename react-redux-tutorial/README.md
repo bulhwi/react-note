@@ -9,6 +9,7 @@
 
 
 ### [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=ko&)
+* [Redux DevTools github](https://github.com/zalmoxisus/redux-devtools-extension#usage)  
 * module install
 ```gitbash
 // npm
