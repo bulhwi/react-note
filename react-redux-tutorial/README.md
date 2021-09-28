@@ -6,3 +6,23 @@
   주로 상태관리가 이루어 지지않고, 그저 props를 통해 데이터를 받아와서 화면에 UI를 보여주기만 하는 컴포넌트.  
 * **컨테이너 컴포넌트**  
   리덕스롸 연동되어 있는 컴포넌트로, 리덕스로부터 상태를 받아오기도 하고 리덕스 스토어에 액션을 디스패치하기도 한다.
+
+
+### [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=ko&)
+* module install
+```gitbash
+// npm
+npm install redux-devtools-extension
+
+// yarn
+yarn add redux-devtools-extension
+```
+
+* src/index.js
+```javascript
+...
+import {composeWithDevTools} from 'redux-devtools-extension';
+
+const store = createStore(rootReducer, composeWithDevTools());
+...
+```
