@@ -1,10 +1,13 @@
 import React from "react";
 import Counter from "./components/Counter";
+import Todos from "./components/Todos.js";
 
 function App() {
   return (
     <div>
-      <Couter number={0} />
+      <Counter number={0} />
+      <hr/>
+      <Todos />
     </div>
   );
 }
