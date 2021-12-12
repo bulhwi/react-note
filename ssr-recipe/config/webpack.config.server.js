@@ -1,5 +1,8 @@
-const paths = require('/paths');
+const paths = require('./paths');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
+const nodeExternals = require('webpack-node-externals');
+const webpack = require('webpack');
+const getClientEnvironment = require('./env');
 
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
@@ -79,7 +82,7 @@ module.exports = {
               importLoaders: 1,
               modules: {
                 exportOnlyLocals: true,
-                getLocalIdent: getCSSModuleLocalIden,
+                getLocalIdent: getCSSModuleLocalIdent,
               },
             },
           },
@@ -93,7 +96,7 @@ module.exports = {
                 options: {
                   importLoaders: 3,
                   modules: {
-                    exportOnlyLocals: true
+                    exportOnlyLocals: true,
                   },
                 },
               },
@@ -102,7 +105,7 @@ module.exports = {
           },
           // Sass + CSS Module을 위한 처리
           {
-            test: sassRegex
+            test: sassRegex,
             exclude: sassModuleRegex,
             use: [
               {
@@ -145,5 +148,9 @@ module.exports = {
   // 코드에서 node_modules 내부의 라이브러리를 참조.
   resolve: {
     modules: ['node_modules']
-  }
+  },
+  externals: [nodeExternals({
+    allowlist: [/@babel/],
+  }),
+  ],
 };
