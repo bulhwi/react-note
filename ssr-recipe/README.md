@@ -23,3 +23,10 @@ P540
 [Loadble Components](https://loadable-components.com/docs/getting-started/)
 
 
+### 서버사이드렌더링 구현하기
+
+```bash
+$ npm run eject
+```
+서버사이드 렌더링 구현을 하기 위해서는 CRA로 구성된 프로젝트 내부에 숨겨져있는 웹팩설정을 커스터마이징 해줘야하기 때문에,  
+**npm run eject** 명령어로 밖으로 꺼내온다.
