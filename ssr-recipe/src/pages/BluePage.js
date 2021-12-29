@@ -1,4 +1,4 @@
-import React from "react";
+import connectReact from "react";
 import Blue from "../components/Blue";
 
 const BluePage = () => {
