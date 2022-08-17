@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "./Banner.css";
 import requests from '../api/request';
 import axios from '../api/axios';
 
@@ -18,7 +19,7 @@ const Banner = () => {
     const { data: movieDetail } = await axios.get(`movie/${movieId}`, {
       params: { append_to_response: 'videos' }
     });
-    console.log(movieDetail);
+
     setMovie(movieDetail);
   };
 
@@ -28,7 +29,7 @@ const Banner = () => {
       backgroundPosition: 'top center',
       backgroundSize: 'cover'
     }}>
-      <div className='banner_contents'>
+      <div className='banner__contents'>
         <h1 className='banner__title'>
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
