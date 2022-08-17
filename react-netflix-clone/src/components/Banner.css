@@ -55,6 +55,11 @@
     font-size: 1rem;
     max-width: 400px;
     height: 80px;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 .banner--fadeBottom {
     height: 7.4rem;
