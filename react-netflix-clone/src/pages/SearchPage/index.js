@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from '../../api/axios';
 import "./SearchPage.css";
+import { UseDebounce } from "../../hooks/useDebounce";
 
 const SearchPage = () => {
   const navigate = useNavigate();
@@ -13,17 +14,16 @@ const SearchPage = () => {
 
   let query = useQuery();
   const searchTerm = query.get('q');
-
+  const debounceSearchTerm = UseDebounce(searchTerm, 500);
   useEffect(() => {
-    if (searchTerm) {
-      fetchSearchMovie(searchTerm);
+    if (debounceSearchTerm) {
+      fetchSearchMovie(debounceSearchTerm);
     }
-  }, [searchTerm]);
+  }, [debounceSearchTerm]);
 
-  const fetchSearchMovie = async (searchTerm) => {
+  const fetchSearchMovie = async (debounceSearchTerm) => {
     try {
-      const request = await axios.get(`/search/multi?include_adult=false&query=${searchTerm}`);
-      console.log(request.data.results);
+      const request = await axios.get(`/search/multi?include_adult=false&query=${debounceSearchTerm}`);
       setSearchResults(request.data.results);
     } catch (e) {
       console.log('error', e);
@@ -50,7 +50,7 @@ const SearchPage = () => {
       <section className="no-results">
         <div className="no-results__text">
           <p>
-            검색된 영화가 없습니다.
+           "{debounceSearchTerm}" 검색된 영화가 없습니다.
           </p>
         </div>
       </section>

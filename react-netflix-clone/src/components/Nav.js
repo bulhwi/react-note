@@ -23,7 +23,6 @@ const Nav = () => {
   }, []);
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setSearchValue(e.target.value);
     navigate(`/search?q=${e.target.value}`);
   }
