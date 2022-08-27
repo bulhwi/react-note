@@ -37,7 +37,7 @@ const SearchPage = () => {
           if (movie.backdrop_path !== null && movie.media_type !== 'person') {
             const movieImageUrl = "https://image.tmdb.org/t/p/w500" + movie.backdrop_path;
             return (
-              <div className="movie" key={movie.id}>
+              <div onClick={() => navigate(`/${movie.id}`)} className="movie" key={movie.id}>
                 <div className="movie__column-poster" onClick={() => navigate(`/${movie.id}`)}>
                   <img src={movieImageUrl} alt='movie image' className="movie__poster" />
                 </div>
