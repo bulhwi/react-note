@@ -18,7 +18,6 @@ const Row = ({ title, id, fetchUrl, isLargeRow }) => {
   }
 
   const handleClick = (movie) => {
-    console.log(movie);
     setModalOpen(true);
     setMovieSelected(movie);
   }
